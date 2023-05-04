@@ -27,4 +27,4 @@ This is a simple event management API built with TypeScript, Express, and TypeOR
 - Express
 - TypeORM
 - CORS
-
+- Jest
