@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Event Manager</title>
+</head>
+<body>
+  <h1>Find All Events</h1>
+  <form id="findAllEventsForm" method="get" action="/api/events">
+    <button type="submit" class="btn btn-primary">Find All Events</button>
+  </form>
+  <div id="events"></div>
+  <br><br><br>
+
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+    <h1>Create Event</h1>
+    <form id="createEventForm" method="post" action="/api/events" >
+      <label for="createTitle" class="form-label">title:</label><br>
+      <input type="text" id="createTitle" name="title" required>
+      <br>
+      <label for="createMessage" class="form-label">message:</label><br>
+      <input type="text" id="createMessage" name="message" required>
+      <br>
+      <label for="createOwner" class="form-label">owner:</label><br>
+      <input id="createOwner" name="owner" required></input>
+      <br>
+      <button type="submit" class="btn btn-primary">Create Event</button>
+    </form>
+  </div>
+
+  <br><br><br>
+  <div class="form-group col-md-6">
+    <h1>Update Event</h1>
+    <form id="updateEventForm" method="post" action="/api/events/update" >
+      <label for="updateById">id:</label><br>
+      <input type="text" id="updateById" name="updateId" required>
+      <br>
+      <label for="updateTitle">title:</label><br>
+      <input type="text" id="updateTitle" name="title" required>
+      <br>
+      <label for="updateMessage">message:</label><br>
+      <input type="text" id="updateMessage" name="message" required>
+      <br>
+      <label for="updateOwner">owner:</label><br>
+      <input id="updateOwner" name="owner" required></input>
+      <br>
+      <button type="submit" class="btn btn-primary">Update Event</button>
+    </form>
+  </div>
+
+  <br><br><br>
+  <div class="form-group col-md-6">
+    <h1>Find Event By Id</h1>
+    <form id="findEventByIdForm" method="get" action="/api/events">
+      <label for="findEventById">id:</label><br>
+      <input type="text" id="findEventById" name="findId" required>
+      <br>
+      <button type="submit" class="btn btn-primary">Find Event</button>
+    </form>
+  </div>
+
+    <br><br><br>
+  <div class="form-group col-md-6">
+    <h1>Delete Event</h1>
+    <form id="deleteEventForm" method="get" action="/api/events/delete" >
+      <label for="deleteId">id:</label><br>
+      <input type="text" id="deleteById" name="deleteId" required>
+      <br>
+      <button type="submit" class="btn btn-primary">Delete Event</button>
+    </form>
+  </div>
+
+</div>
+
+</body>
+</html>
