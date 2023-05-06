@@ -16,8 +16,8 @@ This is a simple restFUL event management API built with TypeScript, Express, an
 
 | Endpoint              | Method | Description                                       |
 | --------------------- | ------ | ------------------------------------------------- |
-| `/api/events`         | GET    | Retrieve all events or a specific event by ID     |
 | `/api/events`         | POST   | Create a new event                                |
+| `/api/events`         | GET    | Retrieve all events or a specific event by ID     |
 | `/api/events/update`  | PUT    | Update an existing event by ID                    |
 | `/api/events/delete`  | DELETE | Delete an existing event by ID                    |
 
