@@ -28,3 +28,12 @@ This is a simple restFUL event management API built with TypeScript, Express, an
 - TypeORM
 - CORS
 - Jest
+
+To start it, just:
+```
+npm start
+```
+And to test:
+```
+npm test
+```
