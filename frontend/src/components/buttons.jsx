@@ -101,7 +101,7 @@ function Buttons(props) {
         }
 
         //Update
-        //float number will be rounded to 2 decimal places
+        //float number will be rounded to up 6 decimal places
         result = parseFloat(result.toFixed(6));
         setInput(result.toString());
         setOperator(null);
