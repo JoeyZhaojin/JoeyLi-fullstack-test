@@ -25,7 +25,7 @@ const createEvent = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
         // Check if owner is in the right format
         const errors = yield (0, class_validator_1.validate)(newEvent);
         if (errors.length > 0) {
-            return res.status(400).json({ OwnerError: "Owner should be {Letter+Number}!" });
+            return res.status(400).json({ message: "Owner should be {Letter+Number}!" });
         }
         // Save new event
         yield repository.save(newEvent);
@@ -83,7 +83,7 @@ const updateEvent = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
         repository.merge(event, req.body);
         const errors = yield (0, class_validator_1.validate)(event);
         if (errors.length > 0) {
-            return res.status(400).json({ OwnerError: "Owner should be {Letter+Number}!" });
+            return res.status(400).json({ message: "Owner should be {Letter+Number}!" });
         }
         // Save and return updated event
         yield repository.save(event);

@@ -9,12 +9,14 @@ const express_1 = __importDefault(require("express"));
 const eventRoutes_1 = __importDefault(require("./routes/eventRoutes"));
 const cors_1 = __importDefault(require("cors"));
 const AppDataSource_1 = require("./AppDataSource");
+const path_1 = __importDefault(require("path"));
 const app = (0, express_1.default)();
 exports.app = app;
 const port = process.env.PORT || 3000;
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
+app.use(express_1.default.static(path_1.default.join(__dirname)));
 // Routes
 app.use('/api/events', eventRoutes_1.default);
 // Send index.html

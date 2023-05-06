@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
 });
 
 //Update event by id
-router.post('/update', async (req, res) =>{
+router.put('/update', async (req, res) =>{
     console.log("api/update");
     if(req.body.updateId){
         await updateEvent(req, res);
@@ -29,7 +29,7 @@ router.post('/update', async (req, res) =>{
     });
 
 //Delete event by id
-router.get('/delete', async (req, res) =>{
+router.delete('/delete', async (req, res) =>{
     console.log("api/delete");
     if(req.query.deleteId){
         await deleteEvent(req, res);

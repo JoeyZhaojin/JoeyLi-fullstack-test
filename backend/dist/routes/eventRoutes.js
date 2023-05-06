@@ -29,14 +29,14 @@ router.post('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     yield (0, eventController_1.createEvent)(req, res);
 }));
 //Update event by id
-router.post('/update', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+router.put('/update', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     console.log("api/update");
     if (req.body.updateId) {
         yield (0, eventController_1.updateEvent)(req, res);
     }
 }));
 //Delete event by id
-router.get('/delete', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+router.delete('/delete', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     console.log("api/delete");
     if (req.query.deleteId) {
         yield (0, eventController_1.deleteEvent)(req, res);

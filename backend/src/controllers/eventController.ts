@@ -17,7 +17,7 @@ export const createEvent = async (req: Request, res: Response) => {
     // Check if owner is in the right format
     const errors = await validate(newEvent);
     if (errors.length > 0) {
-      return res.status(400).json({ OwnerError: "Owner should be {Letter+Number}!" });
+      return res.status(400).json({ message: "Owner should be {Letter+Number}!" });
     }
 
     // Save new event
@@ -78,7 +78,7 @@ export const updateEvent = async (req: Request, res: Response) => {
     repository.merge(event, req.body);
     const errors = await validate(event);
     if (errors.length > 0) {
-      return res.status(400).json({ OwnerError: "Owner should be {Letter+Number}!" });
+      return res.status(400).json({ message: "Owner should be {Letter+Number}!" });
     }
 
     // Save and return updated event

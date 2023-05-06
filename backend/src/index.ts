@@ -3,6 +3,7 @@ import express, { Application } from 'express';
 import eventRoutes from './routes/eventRoutes';
 import cors from 'cors';
 import {AppDataSource} from './AppDataSource';
+import path from 'path';
 
 const app: Application = express();
 const port = process.env.PORT || 3000;
@@ -11,6 +12,7 @@ const port = process.env.PORT || 3000;
 app.use(cors()); 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname)));
 
 // Routes
 app.use('/api/events', eventRoutes);

@@ -1,6 +1,6 @@
 # Event Management API
 
-This is a simple event management API built with TypeScript, Express, and TypeORM. It provides CRUD operations for events and allows users to query and manipulate events data. The API also includes validation and error handling. The project contains a `test.ts` file for testing purposes and an `index.html` for interaction with the API.
+This is a simple restFUL event management API built with TypeScript, Express, and TypeORM. It provides CRUD operations for events and allows users to query and manipulate events data. The API also includes validation and error handling. The project contains a `test.ts` file for testing purposes and an `index.html` for interaction with the API.
 
 ## Features
 
@@ -18,8 +18,8 @@ This is a simple event management API built with TypeScript, Express, and TypeOR
 | --------------------- | ------ | ------------------------------------------------- |
 | `/api/events`         | GET    | Retrieve all events or a specific event by ID     |
 | `/api/events`         | POST   | Create a new event                                |
-| `/api/events/update`  | POST   | Update an existing event by ID                    |
-| `/api/events/delete`  | GET    | Delete an existing event by ID                    |
+| `/api/events/update`  | PUT    | Update an existing event by ID                    |
+| `/api/events/delete`  | DELETE | Delete an existing event by ID                    |
 
 ## Technologies Used
 

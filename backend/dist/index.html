@@ -3,17 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="#">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="eventHandler/eventHandler.js" defer></script>
   <title>Event Manager</title>
 </head>
 <body>
+  <div class="form-row">
+    <div class="form-group col-md-1"></div>
+    <div class="form-group col-md-7">
   <h1>Find All Events</h1>
   <form id="findAllEventsForm" method="get" action="/api/events">
     <button type="submit" class="btn btn-primary">Find All Events</button>
   </form>
-  <div id="events"></div>
   <br><br><br>
-
 
   <div class="form-row">
     <div class="form-group col-md-6">
@@ -75,6 +78,14 @@
   </div>
 
 </div>
+</div>
+  <div class="form-group col-md-4">
+    <h1>Events</h1>
+    <div id="events"></div>
+  </div>
+</div>
+
+<br><br><br>
 
 </body>
 </html>
