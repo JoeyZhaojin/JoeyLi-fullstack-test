@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Display events
         displayEvents(events);
         if (events.length === 0) {
-            alert('No events!');
+            alert('No events!Please create!');
       }
     });
   
