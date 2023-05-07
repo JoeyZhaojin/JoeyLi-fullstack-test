@@ -21,7 +21,7 @@ describe('POST /api/events', () => {
       .send({
         title: 'test',
         message: 'test',
-        owner: 'owner11',
+        owner: 'owner1',
       });
 
     expect(response.status).toBe(201);
@@ -31,7 +31,7 @@ describe('POST /api/events', () => {
         id: expect.any(Number),
         title: 'test',
         message: 'test',
-        owner: 'owner12',
+        owner: 'owner1',
       }),
     );
   });
@@ -42,7 +42,7 @@ describe('POST /api/events', () => {
       .post('/api/events')
       .send({
         message: 'test',
-        owner: 'owner12',
+        owner: 'owner2',
       });
 
     expect(response.status).toBe(400);
