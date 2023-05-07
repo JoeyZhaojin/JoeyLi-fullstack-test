@@ -11,52 +11,6 @@ afterAll(async () => {
   await AppDataSource.close();
 });
 
-//Find all events
-describe('GET /api/events', () => {
-  it('should respond with an array of events', async () => {
-    const response = await request(app).get('/api/events');
-
-    expect(response.status).toBe(200);
-    expect(response.type).toBe('application/json');
-    expect(response.body).toEqual(
-      expect.arrayContaining([
-        expect.objectContaining({
-          id: expect.any(Number),
-          title: expect.any(String),
-          message: expect.any(String),
-          owner: expect.any(String),
-        }),
-      ]),
-    );
-  });
-});
-
-//Find by id
-describe('GET /api/events/:id', () => {
-  //Find the right id
-  it('should respond with a single event', async () => {
-    const response = await request(app).get('/api/events?findId=34');
-
-    expect(response.status).toBe(200);
-    expect(response.type).toBe('application/json');
-    expect(response.body).toEqual(
-      expect.objectContaining({
-        id: expect.any(Number),
-        title: expect.any(String),
-        message: expect.any(String),
-        owner: expect.any(String),
-      }),
-    );
-  });
-
-  //Find the wrong id
-  it('should respond with a 404 when event is not found', async () => {
-    const response = await request(app).get('/api/events/999999');
-
-    expect(response.status).toBe(404);
-  });
-});
-
 //Create new event
 describe('POST /api/events', () => {
 
@@ -67,7 +21,7 @@ describe('POST /api/events', () => {
       .send({
         title: 'test',
         message: 'test',
-        owner: 'owner12',
+        owner: 'owner11',
       });
 
     expect(response.status).toBe(201);
@@ -101,6 +55,52 @@ describe('POST /api/events', () => {
   });
 });
 
+//Find all events
+describe('GET /api/events', () => {
+  it('should respond with an array of events', async () => {
+    const response = await request(app).get('/api/events');
+
+    expect(response.status).toBe(200);
+    expect(response.type).toBe('application/json');
+    expect(response.body).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          id: expect.any(Number),
+          title: expect.any(String),
+          message: expect.any(String),
+          owner: expect.any(String),
+        }),
+      ]),
+    );
+  });
+});
+
+//Find by id
+describe('GET /api/events/:id', () => {
+  //Find the right id
+  it('should respond with a single event', async () => {
+    const response = await request(app).get('/api/events?findId=1');
+
+    expect(response.status).toBe(200);
+    expect(response.type).toBe('application/json');
+    expect(response.body).toEqual(
+      expect.objectContaining({
+        id: expect.any(Number),
+        title: expect.any(String),
+        message: expect.any(String),
+        owner: expect.any(String),
+      }),
+    );
+  });
+
+  //Find the wrong id
+  it('should respond with a 404 when event is not found', async () => {
+    const response = await request(app).get('/api/events/999999');
+
+    expect(response.status).toBe(404);
+  });
+});
+
 //Update event
 describe('PUT /api/events/:id', () => {
 
@@ -108,7 +108,7 @@ describe('PUT /api/events/:id', () => {
 
   // it('should update an event', async () => {
   //   const response = await request(app)
-  //     .put('/api/events/update?updateId=32')
+  //     .put('/api/events/update?updateId=1')
   //     .send({
   //       title: 'test',
   //       message: 'test',
@@ -139,7 +139,7 @@ describe('DELETE /api/events/:id', () => {
 
   //Delete event successfully
   it('should delete an event', async () => {
-    const response = await request(app).delete('/api/events/delete?deleteId=33');
+    const response = await request(app).delete('/api/events/delete?deleteId=1');
 
     expect(response.status).toBe(200);
     expect(response.type).toBe('application/json');
