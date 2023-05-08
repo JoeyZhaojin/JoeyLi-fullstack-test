@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   
-  // 显示事件的函数
+  // Show results on frontend
   function displayEvents(events: any[]) {
     const eventsContainer = document.getElementById('events') as HTMLFormElement;
     eventsContainer.innerHTML = '';
